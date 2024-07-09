@@ -198,6 +198,10 @@ class AndroidUiSettings extends PlatformUiSettings {
   /// when starting the cropper
   final CropAspectRatioPresetData? initAspectRatio;
 
+  final bool? showAdFree;
+
+  final Map<String, String>? translations;
+
   AndroidUiSettings({
     this.toolbarTitle,
     this.toolbarColor,
@@ -224,6 +228,8 @@ class AndroidUiSettings extends PlatformUiSettings {
       CropAspectRatioPreset.ratio4x3,
       CropAspectRatioPreset.ratio16x9
     ],
+    this.showAdFree,
+    this.translations,
   });
 
   @override
@@ -257,6 +263,8 @@ class AndroidUiSettings extends PlatformUiSettings {
                     },
                 })
             .toList(),
+        'android.show_ad_free': this.showAdFree,
+        'android.translations': this.translations,
       };
 }
 
@@ -353,6 +361,9 @@ class IOSUiSettings extends PlatformUiSettings {
   /// controls the list of aspect ratios in the crop menu view.
   final List<CropAspectRatioPresetData> aspectRatioPresets;
 
+  final bool? showAdFree;
+  final Map<String, String>? translations;
+
   IOSUiSettings({
     this.minimumAspectRatio,
     this.rectX,
@@ -380,6 +391,8 @@ class IOSUiSettings extends PlatformUiSettings {
       CropAspectRatioPreset.ratio4x3,
       CropAspectRatioPreset.ratio16x9
     ],
+    this.showAdFree,
+    this.translations,
   });
 
   @override
@@ -416,6 +429,8 @@ class IOSUiSettings extends PlatformUiSettings {
                     },
                 })
             .toList(),
+        'ios.show_ad_free': this.showAdFree,
+        'ios.translations': this.translations,
       };
 }
 

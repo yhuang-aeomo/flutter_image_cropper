@@ -135,6 +135,9 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
                 final Throwable cropError = UCrop.getError(data);
                 finishWithError("crop_error", cropError.getLocalizedMessage(), cropError);
                 return true;
+            } else if (resultCode == 99) {
+                finishWithSuccess("99");
+                return true;
             } else if (pendingResult != null) {
                 pendingResult.success(null);
                 clearMethodCallAndResult();
@@ -175,6 +178,8 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         Boolean showCropGrid = call.argument("android.show_crop_grid");
         Boolean lockAspectRatio = call.argument("android.lock_aspect_ratio");
         Boolean hideBottomControls = call.argument("android.hide_bottom_controls");
+        Boolean showAdFree = call.argument("android.show_ad_free");
+        Map<String, String> translations = call.argument("android.translations");
 
         if (title != null) {
             options.setToolbarTitle(title);
@@ -225,6 +230,12 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         }
         if (hideBottomControls != null) {
             options.setHideBottomControls(hideBottomControls);
+        }
+        if (showAdFree != null) {
+            options.setShowAdFree(showAdFree);
+        }
+        if (translations != null) {
+            options.setTranslates(translations);
         }
 
         return options;

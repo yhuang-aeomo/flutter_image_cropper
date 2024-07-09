@@ -142,6 +142,8 @@
     NSString *title = options[@"ios.title"];
     NSString *doneButtonTitle = options[@"ios.done_button_title"];
     NSString *cancelButtonTitle = options[@"ios.cancel_button_title"];
+    NSNumber *showAdFree = options[@"ios.show_ad_free"];
+    id translations = options[@"ios.translations"];
     
     if (minimumAspectRatio && [minimumAspectRatio isKindOfClass:[NSNumber class]]) {
         controller.minimumAspectRatio = minimumAspectRatio.floatValue;
@@ -190,6 +192,12 @@
     }
     if (cancelButtonTitle && [cancelButtonTitle isKindOfClass:[NSString class]]) {
         controller.cancelButtonTitle = cancelButtonTitle;
+    }
+    if (showAdFree && [showAdFree isKindOfClass:[NSNumber class]]) {
+        controller.showAdFree = showAdFree.boolValue;
+    }
+    if (translations && [translations isKindOfClass:[NSDictionary class]]) {
+        controller.translations = (NSDictionary<NSString *, NSString *> *)translations;
     }
 }
 
@@ -263,7 +271,11 @@
 
 - (void)cropViewController:(TOCropViewController *)cropViewController didFinishCancelled:(BOOL)cancelled {
     [cropViewController dismissViewControllerAnimated:YES completion:nil];
-    _result(nil);
+    if (cropViewController.clickAdFree) {
+        _result(@"99");
+    }else{
+        _result(nil);
+    }
     
     _result = nil;
     _arguments = nil;
