@@ -39,6 +39,6 @@ android {
     }
     dependencies {
         // implementation 'com.github.yalantis:ucrop:2.2.9'
-        implementation 'com.github.yhuang-aeomo:ucrop:146895e'
+        implementation 'com.github.yhuang-aeomo:ucrop:70df4a3'
     }
 }
