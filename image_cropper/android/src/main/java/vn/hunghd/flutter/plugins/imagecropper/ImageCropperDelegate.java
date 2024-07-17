@@ -180,6 +180,7 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         Boolean hideBottomControls = call.argument("android.hide_bottom_controls");
         Boolean showAdFree = call.argument("android.show_ad_free");
         Map<String, String> translations = call.argument("android.translations");
+        Boolean showAspectRatioBar = call.argument("android.show_aspect_ratio_bar");
 
         if (title != null) {
             options.setToolbarTitle(title);
@@ -236,6 +237,9 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         }
         if (translations != null) {
             options.setTranslates(translations);
+        }
+        if (showAspectRatioBar != null) {
+            options.setShowAspectRatioBar(showAspectRatioBar);
         }
 
         return options;

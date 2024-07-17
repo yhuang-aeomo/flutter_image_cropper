@@ -144,6 +144,7 @@
     NSString *cancelButtonTitle = options[@"ios.cancel_button_title"];
     NSNumber *showAdFree = options[@"ios.show_ad_free"];
     id translations = options[@"ios.translations"];
+    NSNumber *showAspectRatioBar = options[@"ios.show_aspect_ratio_bar"];
     
     if (minimumAspectRatio && [minimumAspectRatio isKindOfClass:[NSNumber class]]) {
         controller.minimumAspectRatio = minimumAspectRatio.floatValue;
@@ -198,6 +199,9 @@
     }
     if (translations && [translations isKindOfClass:[NSDictionary class]]) {
         controller.translations = (NSDictionary<NSString *, NSString *> *)translations;
+    }
+    if (showAspectRatioBar && [showAspectRatioBar isKindOfClass:[NSNumber class]]) {
+        controller.showAspectRatioBar = showAspectRatioBar.boolValue;
     }
 }
 

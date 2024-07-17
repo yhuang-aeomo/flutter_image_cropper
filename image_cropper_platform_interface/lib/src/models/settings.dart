@@ -199,8 +199,8 @@ class AndroidUiSettings extends PlatformUiSettings {
   final CropAspectRatioPresetData? initAspectRatio;
 
   final bool? showAdFree;
-
   final Map<String, String>? translations;
+  final bool? showAspectRatioBar;
 
   AndroidUiSettings({
     this.toolbarTitle,
@@ -230,6 +230,7 @@ class AndroidUiSettings extends PlatformUiSettings {
     ],
     this.showAdFree,
     this.translations,
+    this.showAspectRatioBar,
   });
 
   @override
@@ -265,6 +266,7 @@ class AndroidUiSettings extends PlatformUiSettings {
             .toList(),
         'android.show_ad_free': this.showAdFree,
         'android.translations': this.translations,
+        'android.show_aspect_ratio_bar': this.showAspectRatioBar,
       };
 }
 
@@ -363,6 +365,7 @@ class IOSUiSettings extends PlatformUiSettings {
 
   final bool? showAdFree;
   final Map<String, String>? translations;
+  final bool? showAspectRatioBar;
 
   IOSUiSettings({
     this.minimumAspectRatio,
@@ -393,6 +396,7 @@ class IOSUiSettings extends PlatformUiSettings {
     ],
     this.showAdFree,
     this.translations,
+    this.showAspectRatioBar,
   });
 
   @override
@@ -431,6 +435,7 @@ class IOSUiSettings extends PlatformUiSettings {
             .toList(),
         'ios.show_ad_free': this.showAdFree,
         'ios.translations': this.translations,
+        'ios.show_aspect_ratio_bar': this.showAspectRatioBar,
       };
 }
 

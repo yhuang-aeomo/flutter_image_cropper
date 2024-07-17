@@ -289,7 +289,7 @@ class _HomePageState extends State<HomePage> {
             toolbarTitle: 'Cropper',
             toolbarColor: Colors.deepOrange,
             toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.square,
+            initAspectRatio: CropAspectRatioPreset.ratio16x9,
             lockAspectRatio: false,
             aspectRatioPresets: [
               CropAspectRatioPreset.original,
@@ -297,6 +297,7 @@ class _HomePageState extends State<HomePage> {
               CropAspectRatioPreset.ratio4x3,
               CropAspectRatioPresetCustom(),
             ],
+            showAspectRatioBar: false
           ),
           IOSUiSettings(
             title: 'Cropper',
@@ -306,6 +307,7 @@ class _HomePageState extends State<HomePage> {
               CropAspectRatioPreset.ratio4x3,
               CropAspectRatioPresetCustom(),
             ],
+            showAspectRatioBar: false
           ),
           WebUiSettings(
             context: context,
