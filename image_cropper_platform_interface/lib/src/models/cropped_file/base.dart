@@ -21,20 +21,13 @@ import 'package:flutter/foundation.dart' show immutable;
 abstract class CroppedFileBase {
   /// Construct a CroppedFile
   // ignore: avoid_unused_constructor_parameters
-  const CroppedFileBase(String path);
+  const CroppedFileBase(this.path, {this.extraAct = false});
 
-  /// Get the path of the picked file.
-  ///
-  /// This should only be used as a backwards-compatibility clutch
-  /// for mobile apps, or cosmetic reasons only (to show the user
-  /// the path they've picked).
-  ///
-  /// Accessing the data contained in the picked file by its path
-  /// is platform-dependant (and won't work on web), so use the
-  /// byte getters in the CroppedFile instance instead.
-  String get path {
-    throw UnimplementedError('.path has not been implemented.');
-  }
+  /// The path of the picked file.
+  final String path;
+
+  /// Additional action flag
+  final bool extraAct;
 
   /// Synchronously read the entire file contents as a string using the given [Encoding].
   ///

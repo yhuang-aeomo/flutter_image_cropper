@@ -19,12 +19,10 @@ class CroppedFile extends CroppedFileBase {
   ///
   /// Optionally, this can be initialized with `bytes`
   /// so no http requests are performed to retrieve files later.
-  const CroppedFile(this.path, {Uint8List? bytes})
+  const CroppedFile(String path, {Uint8List? bytes, bool extraAct = false})
       : _initBytes = bytes,
-        super(path);
+        super(path, extraAct: extraAct);
 
-  @override
-  final String path;
   final Uint8List? _initBytes;
 
   Future<Uint8List> get _bytes async {

@@ -15,6 +15,7 @@ import com.yalantis.ucrop.view.CropImageView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
@@ -128,15 +129,13 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
             if (resultCode == RESULT_OK) {
                 final Uri resultUri = UCrop.getOutput(data);
                 final String imagePath = fileUtils.getPathFromUri(activity, resultUri);
+                final boolean extraAct = UCrop.getExtraAct(data);
                 cacheImage(imagePath);
-                finishWithSuccess(imagePath);
+                finishWithSuccess(imagePath, extraAct);
                 return true;
             } else if (resultCode == UCrop.RESULT_ERROR) {
                 final Throwable cropError = UCrop.getError(data);
                 finishWithError("crop_error", cropError.getLocalizedMessage(), cropError);
-                return true;
-            } else if (resultCode == 99) {
-                finishWithSuccess("99");
                 return true;
             } else if (pendingResult != null) {
                 pendingResult.success(null);
@@ -147,9 +146,13 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         return false;
     }
 
-    private void finishWithSuccess(String imagePath) {
+    private void finishWithSuccess(String imagePath, boolean extraAct) {
         if (pendingResult != null) {
-            pendingResult.success(imagePath);
+            // 创建一个 Map 来封装参数
+            Map<String, Object> response = new HashMap<>();
+            response.put("imagePath", imagePath);
+            response.put("extraAct", extraAct);
+            pendingResult.success(response);
             clearMethodCallAndResult();
         }
     }

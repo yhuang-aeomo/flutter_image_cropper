@@ -13,16 +13,11 @@ import './base.dart';
 /// A CroppedFile backed by a dart:io File.
 class CroppedFile extends CroppedFileBase {
   /// Construct a PickedFile object backed by a dart:io File.
-  CroppedFile(String path)
+  CroppedFile(String path, {bool extraAct = false})
       : _file = File(path),
-        super(path);
+        super(path,extraAct: extraAct);
 
   final File _file;
-
-  @override
-  String get path {
-    return _file.path;
-  }
 
   @override
   Future<String> readAsString({Encoding encoding = utf8}) {
