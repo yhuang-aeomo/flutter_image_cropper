@@ -308,7 +308,8 @@ class _HomePageState extends State<HomePage> {
               CropAspectRatioPreset.ratio4x3,
               CropAspectRatioPresetCustom(),
             ],
-            showAspectRatioBar: false
+            showAspectRatioBar: false,
+            showAdFree: true
           ),
           WebUiSettings(
             context: context,

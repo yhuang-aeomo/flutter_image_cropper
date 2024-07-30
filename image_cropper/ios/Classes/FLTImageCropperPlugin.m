@@ -259,7 +259,8 @@
     
     if (_result) {
         if ([[NSFileManager defaultManager] createFileAtPath:tmpPath contents:data attributes:nil]) {
-            _result(tmpPath);
+            NSDictionary *resultDic = @{@"imagePath": tmpPath, @"extraAct":  @(cropViewController.clickAdFree)};
+            _result(resultDic);
         } else {
             _result([FlutterError errorWithCode:@"create_error"
                                         message:@"Temporary file could not be created"
@@ -275,12 +276,7 @@
 
 - (void)cropViewController:(TOCropViewController *)cropViewController didFinishCancelled:(BOOL)cancelled {
     [cropViewController dismissViewControllerAnimated:YES completion:nil];
-    if (cropViewController.clickAdFree) {
-        _result(@"99");
-    }else{
-        _result(nil);
-    }
-    
+    _result(nil);
     _result = nil;
     _arguments = nil;
 }
