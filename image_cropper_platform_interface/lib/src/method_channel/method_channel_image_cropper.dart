@@ -72,8 +72,9 @@ class MethodChannelImageCropper extends ImageCropperPlatform {
       }
     }
 
-    final Map<dynamic, dynamic> result =
+    final Map<dynamic, dynamic>? result =
         await _channel.invokeMethod('cropImage', arguments);
+    if (result == null) return null;
     String? imagePath = result['imagePath'];
     bool extraAct = result['extraAct'] ?? false;
     return imagePath == null

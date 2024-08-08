@@ -11,7 +11,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
-  - TOCropViewController (from `/Users/aoe/Documents/GitHub/TOCropViewController`)
+  - TOCropViewController (from `https://github.com/yhuang-aeomo/TOCropViewController`, commit `023b435`)
 
 EXTERNAL SOURCES:
   Flutter:
@@ -21,7 +21,13 @@ EXTERNAL SOURCES:
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   TOCropViewController:
-    :path: "/Users/aoe/Documents/GitHub/TOCropViewController"
+    :commit: 023b435
+    :git: https://github.com/yhuang-aeomo/TOCropViewController
+
+CHECKOUT OPTIONS:
+  TOCropViewController:
+    :commit: 023b435
+    :git: https://github.com/yhuang-aeomo/TOCropViewController
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
@@ -29,6 +35,6 @@ SPEC CHECKSUMS:
   image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
   TOCropViewController: 80b8985ad794298fb69d3341de183f33d1853654
 
-PODFILE CHECKSUM: 480844513bdc5e1739dca0c96964bb52de1ade56
+PODFILE CHECKSUM: 40dd6b03f3d993f8d15f132dd6c178b3c8635a5e
 
 COCOAPODS: 1.15.2

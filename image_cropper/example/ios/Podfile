@@ -31,7 +31,8 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  pod 'TOCropViewController', :git => 'https://github.com/yhuang-aeomo/TOCropViewController', :commit => 'ad29311'
+  pod 'TOCropViewController', :git => 'https://github.com/yhuang-aeomo/TOCropViewController', :commit => '023b435'
+  # pod 'TOCropViewController', :path => '/Users/aoe/Documents/GitHub/TOCropViewController'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
