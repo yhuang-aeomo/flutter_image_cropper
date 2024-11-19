@@ -17,7 +17,7 @@ dependencies:
   image_cropper_platform_interface: 
     path: ../image_cropper_platform_interface
 
-  web: ^0.5.1
+  web: ^1.0.0
 
 
 dev_dependencies:
