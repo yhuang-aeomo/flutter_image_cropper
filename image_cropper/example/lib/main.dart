@@ -287,18 +287,19 @@ class _HomePageState extends State<HomePage> {
         uiSettings: [
           AndroidUiSettings(
             toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
+            toolbarColor: Colors.black,
             toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.ratio16x9,
-            lockAspectRatio: false,
-            aspectRatioPresets: [
-              CropAspectRatioPreset.original,
-              CropAspectRatioPreset.square,
-              CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPresetCustom(),
-            ],
-            showAspectRatioBar: false,
-            showAdFree: true
+            cropFrameStrokeWidth: 10,
+            backgroundColor: Colors.black,
+            showCropGrid: false,
+            lockAspectRatio: true,
+            showAdFree: true,
+            translations: {
+              'adFreeCreation': 'Ad Free Creation',
+              'tryIt': 'Try It',
+              'guideText': 'Guide Text',
+            },
+            showAspectRatioBar: true,
           ),
           IOSUiSettings(
             title: 'Cropper',
