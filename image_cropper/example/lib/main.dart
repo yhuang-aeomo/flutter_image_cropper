@@ -298,6 +298,7 @@ class _HomePageState extends State<HomePage> {
               'adFreeCreation': 'Ad Free Creation',
               'tryIt': 'Try It',
               'guideText': 'Guide Text',
+              'topTips': 'Tips: Zoom and pan the picture, framing only one person\'s upper body for better results,'
             },
             showAspectRatioBar: true,
           ),

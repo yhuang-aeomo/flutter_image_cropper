@@ -38,6 +38,6 @@ android {
         disable 'InvalidPackage'
     }
     dependencies {
-        implementation 'com.github.yhuang-aeomo:ucrop:759dc51'
+        implementation 'com.github.yhuang-aeomo:ucrop:0644d85'
     }
 }
